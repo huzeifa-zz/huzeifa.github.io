@@ -1,4 +1,4 @@
 name: Huzeifa Dawood
 markdown: redcarpet
 pygments: true
-permalink: /:title
+permalink: /:year/:month/:day/:title
