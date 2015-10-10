@@ -1,5 +1,0 @@
-name: Huzeifa Dawood
-markdown: redcarpet
-pygments: false
-exclude: [Gemfile, Gemfile.lock, README.md]
-permalink: /:year/:month/:day/:title
