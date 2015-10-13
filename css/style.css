@@ -1,0 +1,311 @@
+html {
+   background: url(../images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  font-family: Helvetica, Arial;
+  font-size: 14px;
+}
+
+.top-bar {
+  background-color: #fff;
+  border-bottom: 2px solid #000;
+  height: 80px;
+  /*opacity: 0.9;*/
+  background: url(../images/halftone.png);
+}
+
+.top-bar * , .footer-inner * {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.top-bar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.top-bar .left, .top-bar .center, .top-bar .right {
+  float: left;
+  min-height: 1px;
+}
+
+.top-bar .left {
+  width: 20%;
+}
+
+.top-bar .left .logo {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #000;
+  margin: 0;
+  padding: 0 20px;
+  color: #fff;
+  line-height: 80px;
+  text-transform: uppercase;
+  text-align: left;
+  transition: background-color 0.2s ease-in 0s;
+  font-size: 48px;
+  font-weight: 100;
+  letter-spacing: -1px;
+}
+
+.top-bar .left .logo:hover {
+  background-color: #aaa;
+}
+
+.top-bar .right {
+  width: 20%;
+}
+
+.top-bar .right .button-wrap {
+  line-height: 80px;
+  text-align: center;
+} 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			
+.top-bar .center {
+  width: 60%
+}
+
+.top-bar .center p {
+  line-height: 80px;
+  margin: 0;
+  text-align: center;
+  font-size: 21px;
+  padding: 0 20px
+}
+
+.top-bar .center ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.top-bar .center li {
+  display: inline-block;
+  margin-left: 10px
+}
+
+.top-bar .center .social {
+  color: #111;
+  transition: color 0.2s ease-in 0s;
+}
+
+.top-bar .center .social:hover {
+  color: #aaa;
+}
+
+
+.jumbotron {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.jumbotron .container {
+  width: 960px;
+  margin: 0 auto;
+
+}
+
+.jumbotron .title {
+  line-height: 1.25;
+  font-size: 60px;
+  margin: 0 0 20px 0;
+  color: #000;
+  text-align: left;
+  letter-spacing: -1px
+}
+
+/*.jumbotron p {
+  margin: 0;
+  color: #888;
+  font-size: 20px;
+}
+
+.jumbotron .date {
+  font-size: 16px;
+  margin: 0 auto;
+  color: #000;
+  text-align: center;
+  padding: 8px;
+  background-color: #aaa;
+
+}
+
+.post-body {
+  margin-top: 30px;
+  font-size: 20px;
+  line-height: 1.5
+}
+*/
+
+.main {
+  width: 100%;
+  min-height: 320px
+}
+
+.main .container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  max-width: 800px;
+  margin-top: 8%;
+}
+
+.main .blog-title {
+   color: #fff;
+   font-size: 28px;
+   text-align: center;
+   line-height: 1.25;
+   margin: 0;
+}
+
+.main .sub {
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.main .about-me {
+  font-size: 16px;
+  color: #fff;
+  display: none;
+}
+
+.footer {
+  width: 100%;
+  position: relative;
+}
+
+.footer-inner {
+  display: table;
+  width: 90%;
+  background-color: #111;
+  height: 60px;
+  margin: 0 auto;
+  opacity: 0.5;
+  padding: 0 10px;
+}
+
+.footer-inner .container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-inner .row {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.footer-inner p {
+  text-align: left;
+  color: #fff;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 40rem) {
+  #about {
+    display: none;
+  }
+  
+  .main .about-me {
+    display: block;
+  }
+}
+
+@media (min-width: 40rem) {
+  .footer {
+    position: absolute;
+    bottom: 5%;
+  }
+
+  .main .blog-title {
+    color: #fff;
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: -1px;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .main .sub {
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .footer-inner p {
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .footer-left { width: 25%; }
+  .footer-center { width: 50%; }
+  .footer-right { width: 25%; }
+}
+
+/*Buttons*/
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1em;
+  background-color: transparent;
+  transition: color 0.2s ease-in 0s, background-color 0.2s ease-in 0s;
+}
+
+.about:hover {
+  color: #fff;
+  background-color: #111;
+}
+
+.about {
+  color: #111;
+  border: 2px solid #111;
+  
+}
+
+.blog {
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.blog:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+.nice {
+  color: #111;
+  font-size: 14px;
+  border: 2px solid #111;
+}
+
+.nice:hover {
+  color: #fff;
+  background-color: #111;
+}
