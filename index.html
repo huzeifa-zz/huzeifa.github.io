@@ -3,28 +3,24 @@ layout: default
 title: "Huzeifa Dawood"
 subtitle: "{ hacker.maker }"
 about_me: > # this means to ignore newlines until "baseurl:"
-  I'm an undergraduate electrical engineering student at University of Nairobi.
-  <br />I like hacking with electronics and problem solving using computer programming.
+  I study electrical engineering at University of Nairobi.
+  <br />I like hacking with electronics, mathematics and computer programming.
 --- 
 
 <!-- Main section -->
     <div class="main">
       <div class="container">
-        <h1 class="blog-title">{{ page.title }}</h1>
-        <p class="sub"><strong>{{ page.subtitle }}</strong></p>
-        <p class="about-me">{{ page.about_me }}</p>
-        <p style="text-align: center; margin-top: 20px; font-weight: bold;"><a class="btn blog" href="#">Read my blog <i class="fa fa-arrow-right"></i></a></p>
+        <p class="aboutme">{{ page.about_me }}</p>
+        <h1 style="color: #fff; text-align: center; font-size: 72px; font-weight: 100; letter-spacing: 2px;">I <i style="color: #ee1111"class="fa fa-heart"></i> MOMBASA</h1>
       </div>
     </div>
     <!-- End of Main -->
+    
     <footer class="footer">
       <div class="footer-inner">
-        <div class="container">
-        <div class="footer-left"><p><i class="fa fa-cog"></i> Powered by Github Pages</p></div>
-        <div class="footer-center">
-          <p><i class="fa fa-camera"></i> Breath taking view from English Point Marina - Mombasa, Kenya</p>
-        </div>
-        <div class="footer-right "><p>I <i class="fa fa-heart"></i> MOMBASA</p></div>
-        </div>
+          <ul class="nav">
+            <li><a class="social" href="http://twitter.com/{{ site.twitter_username }}"><i class="fa fa-twitter fa-3x"></i></a></li>
+            <li><a class="social" href="http://github.com/{{ site.github_username }}"><i class="fa fa-github fa-3x"></i></a></li>
+          </ul>
       </div>
     </footer>

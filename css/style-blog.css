@@ -1,0 +1,32 @@
+.bg-wrapper {
+  background: url(../images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.jumbotron {
+  padding: 5em 0;
+}
+
+.jumbotron .container {
+  margin: 0 auto;
+  width: 80%;
+}
+.jumbotron .title {
+  line-height: 1.25;
+  font-size: 72px;
+  margin: 0;
+  color: #fff;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.jumbotron .sub {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+}

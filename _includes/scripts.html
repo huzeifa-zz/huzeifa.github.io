@@ -5,10 +5,9 @@
       var button = $("<a id=\"nice\" class=\"btn nice animated fadeIn\" href=\"#\"><i class=\"fa fa-hand-spock-o fa-lg\"></i> Nice to meet you!</a>");
       $("#about").on("click", function() {
         $("#about").addClass("mute");
-        $("#title").hide();
         $(".about-me").typed({
-	  strings: ["Hello there! I'm <b>Huzeifa Dawood</b>", "I'm an undergraduate electrical engineering student at University of Nairobi.", "I like hacking with electronics and", "problem solving using computer programming.", "Welcome!", ""],
-	  typeSpeed: 50,
+	  strings: ["Hello there! I'm <b>Huzeifa Dawood</b> from Mombasa", "I study electrical engineering at University of Nairobi.", "I like hacking with electronics, mathematics and computer programming", "Welcome!", ""],
+	  typeSpeed: 30,
           callback: function() {
               $(".typed-cursor").remove();
               $(".about-me").html(button);
@@ -18,7 +17,6 @@
                 $(".about-me").after("<span class=\"about-me\" />");
                 setTimeout(function() {
                   $(".about-me")[0].remove();
-                  $("#title").show();
                 }, 1500)
                 $("#about").removeClass("mute");
             });

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  {% include head.html %}
+  <link rel="stylesheet" type="text/css" href="css/style-blog.css">
+  </head>
+  <body>
+    <div class="bg-wrapper">
+      {% include top-bar.html %}
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="title">{{ page.title }}</h1>
+          <p class="sub">{{ page.subtitle }}</p>
+        </div>
+      </div>
+    </div>
+    {{ content }}
+    
+    {% include scripts.html %}
+  </body>
+
+</html>
