@@ -1,81 +1,38 @@
 body {
   font-family: Helvetica, Arial;
-  font-size: 14px;
+  font-size: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.top-bar {
-  border-bottom : 1px solid #f8f8f8;
-  width: 90%;
-  margin: 0 auto;
-  padding: 0 10px;
-  height: 80px;
+#wrapper {
+        padding-top: 2em;
+	min-height:100%;
+	position:relative;
 }
 
-.top-bar * {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+.text-center {
+  text-align: center;
 }
 
-.top-bar:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.top-bar .left, .top-bar .center, .top-bar .right {
-  float: left;
-  min-height: 1px;
-}
-
-.top-bar .left {
-  width: 20%;
-}
-
-.top-bar .left .logo {
+.logo {
   color: #fff;
-  text-align: left;
   font-weight: 100;
   text-decoration: none;
   transition: color 0.2s ease-in 0s;
 }
 
-.top-bar .left  .logo:hover{
+.logo:hover {
   color: #e8e8e8;
 }
 
-.top-bar .right {
-  width: 20%;
-  display: table;
-  height: 80px;
-}
-
-.top-bar .right .button-wrap {
-  text-align: right;
-  display: table-cell;
-  vertical-align: middle;
-}
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												
-.top-bar .center {
-  width: 60%
-}
-
-.top-bar .center p {
-  color: #fff;
-  text-align: center;
-  font-size: 21px;
-  padding: 0 20px
-}
+.love { color: #fff; font-size: 5em; font-weight: 100; letter-spacing: 2px; }
 
 .main {
   width: 100%;
-}
-
-.main .container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  margin-top: 10%;
+  padding-bottom: 5em;
+  padding-top: 5%;
 }
 
 .main .aboutme {
@@ -84,22 +41,10 @@ body {
   display: none;
 }
 
-.footer {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-
-.footer-inner {
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
 .nav {
   list-style-type: none;
   text-align: center;
   padding: 0;
-  margin: 20px 0;
 }
 
 .nav li {
@@ -134,18 +79,19 @@ body {
   background-color: #e8e8e8;
 }
 
-.nice {
-  font-size: 14px;
-}
-
 .mute { background-color: #e8e8e8; }
 
-@media screen and (max-width: 40rem) {
-  #about {
-    display: none;
-  }
-  
-  .main .aboutme {
-    display: block;
-  }
+
+#footer {
+	width:100%;
+	height:5em;
+        margin: 2em 0;
+	position:absolute;
+	bottom:0;
+	left:0;
 }
+
+@media only screen and (max-width: 400px) {
+                    body { font-size:90%;}
+                    .love { font-size: 3.5em}
+     }
