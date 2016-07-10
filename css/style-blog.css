@@ -38,5 +38,6 @@
 .post {
   width: 70%;
   margin: 0 auto;
+  overflow: hidden;
 }
 .post h1 { font-weight: 100}
