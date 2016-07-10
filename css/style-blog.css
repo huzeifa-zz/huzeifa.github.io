@@ -35,5 +35,8 @@
   padding: 0.3em;
   display: inline-block;
 }
-
+.post {
+  width: 70%;
+  margin: 0 auto;
+}
 .post h1 { font-weight: 100}
