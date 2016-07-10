@@ -6,6 +6,8 @@
   background-size: cover;
 }
 
+.logo a { color: #111; }
+
 .jumbotron {
   padding: 5em 0;
 }
@@ -16,7 +18,7 @@
 }
 .jumbotron .title {
   line-height: 1.25;
-  font-size: 72px;
+  font-size: 4em;
   margin: 0;
   color: #fff;
   letter-spacing: -1px;
@@ -25,8 +27,12 @@
 }
 
 .jumbotron .sub {
-  margin-top: 20px;
-  font-size: 24px;
-  color: #fff;
-  text-align: center;
+  margin-top: 0.8em;
+  font-size: 1.25em;
+  color: #111;
+  background-color: #fff;
+  padding: 0.3em;
+  display: inline-block;
 }
+
+.post h1 { font-weight: 100}
