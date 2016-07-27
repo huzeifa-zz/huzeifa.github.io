@@ -1,16 +1,29 @@
 ---
 layout: blog
-title: "//Blog"
+title: "Blog"
 subtitle: "ADVENTURE - ENGINEERING - FUN"
 --- 
-
-<div class="post">
-<div class="grid grid-pad">
-   <div class="col-1-1">
-     <span style="font-size:1em; background-color:#0074D9; margin-bottom:0.67em; padding:0.3em; display:inline-block; color:#fff">May 3, 2016</span>
-     <h1>Cycling from Mombasa to Malindi</h1>
-      <p>The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. he quick brown fox jumps over the lazy dog. </p>
+<div class="bg-wrapper">
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="title">{{ page.title }}</h1>
+      <p class="sub"><mark>adventure . engineering . fun</mark></p>
+    </div>
+  </div>
+</div>
+<div class="post-wrapper">
+{% for post in site.posts %}
+    <div class="post">
+    <div class="grid grid-pad">
+    <div class="col-1-1">
+      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+      <p style="text-align:center; color:#39CCCC;">{{ post.date | date: "%b %-d, %Y" }}</</p>
+       <hr/>
+      <p>{{ post.content }}</p>
    </div>
+   </div>
+   </div>
+{% endfor %}
+</div>
 
-</div>
-</div>
+
