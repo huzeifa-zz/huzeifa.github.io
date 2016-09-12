@@ -1,7 +1,6 @@
 ---
 layout: blog
 title: "Blog"
-subtitle: "ADVENTURE - ENGINEERING - FUN"
 --- 
 <div class="bg-wrapper">
   <div class="jumbotron">
@@ -13,14 +12,11 @@ subtitle: "ADVENTURE - ENGINEERING - FUN"
 </div>
 <div class="post-wrapper">
 {% for post in site.posts %}
-    <div class="post">
-    <div class="grid grid-pad">
+    <div class="post grid grid-pad">
     <div class="col-1-1">
-      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-      <p style="text-align:center; color:#39CCCC;">{{ post.date | date: "%b %-d, %Y" }}</</p>
+      <h1 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+      <p class="post-date" style="text-align:left; color:#999;">{{ post.date | date: "%b %-d, %Y" }}</</p>
        <hr/>
-      <p>{{ post.content }}</p>
-   </div>
    </div>
    </div>
 {% endfor %}
