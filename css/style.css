@@ -76,9 +76,9 @@ body {
   text-transform: uppercase;
   text-align: center;
   line-height: 1em;
-  background-color: #0074D9;;
+  background-color: #7FDBFF;
   transition: background-color 0.2s ease-in 0s;
-  color: #111;
+  color: #fff;
 }
 
 .btn:hover {
