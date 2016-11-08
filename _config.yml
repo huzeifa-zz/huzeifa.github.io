@@ -1,11 +1,11 @@
 # Site settings
 title: Huzeifa Dawood
 description: Blog about electronics and computer programming
-baseurl: "" 
+baseurl: ""
 # the subpath of your site, e.g. /blog/
 url: "http://huzeifa.github.io" # the base hostname & protocol for your site
 twitter_username: huzi94
 github_username:  huzeifa
-
+permalink: pretty
 # Build settings
 markdown: kramdown
