@@ -13,6 +13,7 @@ header.blog-head {
   padding: 1em 0;
   background: url(/images/asanoha.png) repeat;"
 }
+
 .jumbotron {
   padding: 5em 0;
 }
@@ -30,6 +31,7 @@ header.blog-head {
   letter-spacing: -1px;
   text-transform: uppercase;
   text-align: center;
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 .jumbotron .sub {
@@ -54,6 +56,7 @@ main.main-wrapper {
 .post {
   margin-bottom: 1em;
   border-bottom: 0.15em dotted #7FDBFF;
+  
 }
 
 .post:last-child {
@@ -64,7 +67,7 @@ main.main-wrapper {
 article header {
    /*border: 4px solid #7FDBFF;*/
    /*padding: 1em 0.67em;*/
-   font-family: "Roboto Condensed",sans-serif;
+   font-family: "Roboto Slab",sans-serif;
 }
 
 .blog-footer {
@@ -80,13 +83,13 @@ article header {
 }
 
 .blog-footer a:hover {text-decoration: none;}
+.post p {font-size: 1.2em; line-height: 1.4;}
+.post h1.post-title { font-size: 2.5em; font-weight: bold; margin: 0; color: #111; text-align: center }
 
-.post h1.post-title { font-size: 2.5em; font-weight: bold; margin: 0; font-family: "Roboto Condensed",sans-serif; color: #111; text-align: center }
+.post h1.post-title a {color: #111; text-decoration: none; transition: color 0.2s ease-in 0s;}
+.post h1.post-title a:hover {color: #7FDBFF;}
 
-.post h1.post-title a {color:#111; text-decoration: none; transition: color 0.2s ease-in 0s;}
-.post h1.post-title a:hover {color: #ccc}
-
-.post p.post-date {margin:0.50em 0; text-align:center; color:#999;}
+.post p.post-date {font-size: 100%; line-height: 1.3125; margin:0.50em 0; text-align:center; color:#999;}
 hr {
     width: 10%;
     border: none;
