@@ -39,17 +39,11 @@ body {
   padding: 10% 0 5em;
 }
 
-.main .aboutme {
-  font-size: 16px;
-  color: #fff;
-  display: none;
-}
-
 .nav {
   list-style-type: none;
   text-align: center;
   padding: 0;
-  margin: 0.8em 0;
+  margin: 0.4em 0 0;
 }
 
 .nav li {
@@ -71,10 +65,10 @@ body {
   display: inline-block;
   text-decoration: none;
   margin: 0;
-  padding: 10px 20px;
+  padding: 0.5em 1em;
   text-transform: uppercase;
   text-align: center;
-  line-height: 1em;
+  line-height: 1;
   border: 0.15em solid  #7FDBFF;
   background-color: #FFF;
   transition: background-color 0.2s ease-in 0s;
