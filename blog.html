@@ -2,7 +2,7 @@
 layout: blog
 title: "Blog | Huzeifa Dawood"
 ---
-<div class="bg-wrapper">
+<div class="bg-blog">
   <div class="jumbotron">
     <div class="container">
       <h1 class="title">Blog</h1>
@@ -12,8 +12,8 @@ title: "Blog | Huzeifa Dawood"
 </div>
 <main class="main-wrapper">
 {% for post in site.posts %}
-    <div class="post grid grid-pad">
-    <div class="col-1-1">
+    <div class="post grid">
+    <div class="col-8-12 push-2-12">
       <article>
         <header>
           <h1 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
