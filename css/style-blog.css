@@ -43,6 +43,7 @@ header.blog-head {
   text-transform: uppercase;
   text-align: center;
   font-family: 'Roboto Slab', sans-serif;
+  text-shadow: 0 1px 5px #666;
 }
 
 .jumbotron .sub {
@@ -80,10 +81,9 @@ main.main-wrapper {
   border-bottom: 0;
 }
 
-.title-about-me {
+.about-me h1 {
   font-family: "Roboto Slab", sans-serif;
-  font-size: 3em;
-  text-transform: uppercase;
+  color: #001f3f;
 }
 
 .about-me p, .post p {font-size: 1.2em; line-height: 1.4;}
@@ -110,16 +110,16 @@ main.main-wrapper {
 .blog-footer {
   width: 100%;
   margin: 0 auto;
-  background: #111;
-  color: #fff;
+  background: #fff;
+  color: #111;
 }
 
 .blog-footer a {
-  color: #7FDBFF;
+  color: #001f3f;
   text-decoration: none;
 }
 
-.blog-footer a:hover {text-decoration: none;}
+.blog-footer a:hover {text-decoration: underline;}
 
 hr {
     width: 10%;
