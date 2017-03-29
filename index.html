@@ -2,6 +2,7 @@
 layout: default
 title: "Huzeifa Dawood"
 ---
+{% assign latest_post = site.posts.first %}
 
 <!-- Main section -->
 <div class="main-text">
@@ -12,10 +13,15 @@ title: "Huzeifa Dawood"
     <!-- Footer section -->
     <div id="footer">
     <div class="grid">
-        <div class="col-1-1">
-          <ul class="nav">
-            <li><a class="social" href="http://twitter.com/huzi94"><i class="fa fa-twitter fa-3x"></i></a></li>
-            <li><a class="social" href="http://github.com/huzeifa"><i class="fa fa-github fa-3x"></i></a></li>
+        <div class="col-6-12">
+        {% if latest_post.title %}
+          <h3 class="text-center"><a class="latest-post" href="{{ root_url }}{{ latest_post.url }}">{{ latest_post.title }} <i class="fa fa-arrow-right"></i></a></h3>    
+        {% endif %}
+        </div>
+        <div class="col-6-12">
+          <ul class="nav social">
+            <li><a href="http://twitter.com/huzi94"><i class="fa fa-twitter fa-2x"></i></a></li>
+            <li><a href="http://github.com/huzeifa"><i class="fa fa-github fa-2x"></i></a></li>
           </ul>
         </div>
     </div>

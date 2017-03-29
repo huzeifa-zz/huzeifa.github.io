@@ -65,12 +65,24 @@ header.main-head {
   margin-left: 10px
 }
 
-.nav .social {
+.social {margin: 0.8em 0 0;}
+
+.social a {
   color: #fff;
   transition: color 0.2s ease-in 0s;
 }
 
-.nav .social:hover {
+.social a:hover {
+  color: #7FDBFF;
+}
+
+.latest-post {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.2s ease-in 0s;
+}
+
+.latest-post:hover {
   color: #7FDBFF;
 }
 
@@ -98,7 +110,7 @@ header.main-head {
 	position:absolute;
 	bottom:0;
 	left:0;
-  padding: 1em 0;
+        padding: 1.2em 0;
 }
 
 @media only screen and (max-width: 400px) {

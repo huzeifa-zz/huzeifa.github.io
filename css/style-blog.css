@@ -56,7 +56,7 @@ header.blog-head {
 
 main.main-wrapper {
   background: #fff;
-  padding: 2em 0;
+  padding: 2em 0 0;
   margin: 0 auto;
   width: 100%;
 }
@@ -68,18 +68,16 @@ main.main-wrapper {
 .post {
   border-bottom: 0.2em dotted #001f3f;
   margin-bottom: 1em;
+  margin-top: 2em 
+}
 
+.post:first-child {
+  margin-top: 0;
 }
 
 .post:last-child {
   border-bottom: 0;
 }
-
-.about-me h1 {
-  font-family: "Roboto Slab", sans-serif;
-  color: #001f3f;
-}
-
 .about-me p, .post p {font-size: 1.2em; line-height: 1.4;}
 .post h1.post-title { font-size: 2.5em; font-weight: bold; margin: 0; color: #111; text-align: center }
 
@@ -97,6 +95,11 @@ main.main-wrapper {
   min-height: 30em;
 }
 
+.about-me h1 {
+  font-family: "Roboto Slab", sans-serif;
+  color: #001f3f;
+}
+S
 .about-me p {
   color: #001f3f;
 }
