@@ -4,6 +4,10 @@ description: Personal website of Huzeifa Dawood
 baseurl: ""
 # the subpath of your site, e.g. /blog/
 url: "http://huzeifa.github.io" # the base hostname & protocol for your site
+#Jekyll plugins
+plugins:
+    - jekyll-seo-tag
+#social media
 twitter_username: huzi94
 github_username:  huzeifa
 permalink: pretty

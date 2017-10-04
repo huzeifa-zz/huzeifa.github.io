@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Simulating a Constant Current Source Circuit using Qucs"
+title:  "Simulating a Constant-Current Source Circuit using Qucs"
 date: 2017-08-27
 categories: circuits
 ---
@@ -156,7 +156,7 @@ The graph illustrates the change in current over the specified voltage range. It
 Bravo! You have successfully performed a parameter sweep simulation and displayed the results graphically on a cartesian diagram.
 
 ## Conclusion
-This post was aimed at giving you a brief overview of the Qucs interface, showing you how to conduct circuit simulations in order to obtain measurements and, use them to verify the intended purpose of the circuit.
+This post was aimed at giving you a brief overview of the Qucs interface, showing you how to conduct circuit simulations in order to obtain measurements and, use them to verify the outcome of the circuit.
 
 ## References
 + [Qucs project](http://qucs.sourceforge.net/index.html)  
