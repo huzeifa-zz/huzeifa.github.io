@@ -2,7 +2,7 @@
 layout: post
 title: "Python workshop at Nairobi Innovation Week 2018"
 date: 2018-03-09
-categories: python, machine-learning
+categories: python
 ---
 
 On the 5th and 6th of March 2018, I participated in the Python workshop organized by BotLab at the Nairobi Innovation Week 2018.
