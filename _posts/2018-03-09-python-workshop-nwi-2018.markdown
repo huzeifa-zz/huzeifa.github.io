@@ -43,5 +43,6 @@ New weight = old weight + (c * error * input), where c is the learning rate.
 Lastly, a helper class called Generator was created to generate the training data of size n, which consisted of randomly selected values of x and y (the inputs) together with the correct answer (whether the point (x, y) is above or below the line).
 
 The working code for the perceptron is given below:
+<script src="https://gist.github.com/huzeifa/d55e7fb91c50e9184060eb4ac8b34676.js"></script>
 
 Attending the workshop was of great benefit to me as it gave me a jump start to learn more about artificial intelligence and also it helped me to strengthen my understanding of the advance concepts of the Python programming language. 
