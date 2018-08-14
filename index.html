@@ -1,28 +1,33 @@
 ---
 layout: default
-title: "Huzeifa Dawood"
+title: Home
 ---
-{% assign latest_post = site.posts.first %}
 
-<!-- Main section -->
-<div class="main-text">
-    <h1>I <i style="color: #ee1111" class="fa fa-heart"></i><br /> MOMBASA</h1>
+<div class="posts">
+  {% for post in paginator.posts %}
+  <article class="post">
+    <h1 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+
+    {{ post.content }}
+  </article>
+  {% endfor %}
 </div>
-    <!-- End of Main -->
 
-    <!-- Footer section -->
-    <div id="footer">
-    <div class="grid">
-        <div class="col-6-12">
-        {% if latest_post.title %}
-          <p><a class="latest-post" href="{{ root_url }}{{ latest_post.url }}">{{ latest_post.title }} <i class="fa fa-arrow-right"></i></a></p>    
-        {% endif %}
-        </div>
-        <div class="col-6-12">
-          <ul class="nav social">
-            <li><a href="http://twitter.com/huzi94"><i class="fa fa-twitter fa-2x"></i></a></li>
-            <li><a href="http://github.com/huzeifa"><i class="fa fa-github fa-2x"></i></a></li>
-          </ul>
-        </div>
-    </div>
-    </div>
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
