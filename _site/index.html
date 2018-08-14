@@ -68,53 +68,60 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/2016/01/03/introduction/">
-        Introduction
+      <a href="/python/2018/03/09/python-workshop-nwi-2018/">
+        Python Workshop at Nairobi Innovation Week 2018
       </a>
     </h1>
 
-    <time datetime="2016-01-03T00:00:00+03:00" class="post-date">03 Jan 2016</time>
+    <time datetime="2018-03-09T00:00:00+03:00" class="post-date">09 Mar 2018</time>
 
-    <p><em>The Strange Case of Dr. Jekyll and Mr. Hyde</em> tells the story of a lawyer investigating the connection of two persons, Dr. Henry Jekyll and Mr. Edward Hyde. Chief among the novel’s supporting cast is a man by the name of Mr. Poole, Dr. Jekyll’s loyal butler.</p>
+    <p>On the 5th and 6th of March 2018, I participated in the Python workshop organized by BotLab at the Nairobi Innovation Week 2018.
+The workshop aimed at teaching the Python programming language and using it to implement a basic artificial neural network called a perceptron.
+Our educator at the workshop was Kevin Nderitu, a passionate software developer.</p>
 
-<hr />
+<p>On the first day we were introduced to the Python programming language.
+The following concepts were introduced:</p>
+<ol>
+  <li>Variables.</li>
+  <li>Conditional statements and loops.</li>
+  <li>Functions.</li>
+  <li>Strings.</li>
+  <li>Lists and list comprehensions.</li>
+  <li>Dictionaries.</li>
+  <li>Tuples.</li>
+  <li>Object oriented programming, inheritance and polymorphism.</li>
+</ol>
 
-<p>Poole is the butler for <a href="http://jekyllrb.com">Jekyll</a>, the static site generator. It’s designed and developed by <a href="https://twitter.com/mdo">@mdo</a> to provide a clear and concise foundational setup for any Jekyll site. It does so by furnishing a full vanilla Jekyll install with example layouts, pages, posts, and styles.</p>
+<p>During the session, we were given a task to write a python program that counts the number of spaces in a sentence. This was successfully achieved.</p>
 
-<p>There are currently three themes built on Poole:</p>
+<p>On the second day, we proceeded to learn about advanced concepts in python such as abstraction, encapsulation, exception catching and multi-threading. Then after we headed for the fun and interesting part of the workshop: implementation of the perceptron.</p>
 
-<ul>
-  <li><a href="http://hyde.getpoole.com">Hyde</a></li>
-  <li><a href="http://lanyon.getpoole.com">Lanyon</a></li>
-  <li><a href="http://enfield.getpoole.com">Enfield</a></li>
-</ul>
+<p>A perceptron models a single artificial neuron. It consists of a set of inputs, each having a corresponding random weight, a bias, and an activation function that generates the output. For our case, we created a perceptron to determine whether a point (x, y) on the cartesian plane is above or below a given line. This is an example of a classification problem.</p>
 
-<p>Learn more and contribute on <a href="https://github.com/huzeifa/huzeifa.github.io">GitHub</a>.</p>
+<p>The steps for coding the perceptron is described as follows:</p>
+<ol>
+  <li>Each input (x and y) is multipied with its corresponding weight. The result is called the weighted input. The weights are randomly generated for each input. Also a bias of value 1 is added to the set of inputs to ensure that the sum of the weighted inputs is always non-zero.</li>
+  <li>The sum of all the weighted inputs is determined.</li>
+  <li>This sum is passed as a parameter to an activation function which generates the output.</li>
+  <li>The activation function produces the output based on the following criteria: if sum is greater than zero, it returns 1, else it returns -1.</li>
+</ol>
 
-<h3 id="whats-included">What’s included</h3>
+<p>The above steps are defined in the feedForward method of the Perceptron class, which takes the set of inputs to the perceptron as its arguement.</p>
 
-<p>Poole is a streamlined Jekyll site designed and built as a foundation for building more meaningful themes. Poole, and every theme built on it like this one, includes the following:</p>
+<p>The perceptron needs to be trained in order to produce the correct ouput. The definition of the training function is described as follows:</p>
+<ol>
+  <li>A guess of the output is determined using randomly chosen inputs.</li>
+  <li>The error is evaluated, that is, the difference between the desired output (correct answer) and the guessed output.</li>
+  <li>Each weight is modified based on the magitude of the error. The expression for updating the weight is as follows:
+New weight = old weight + (c * error * input), where c is the learning rate.</li>
+</ol>
 
-<ul>
-  <li>Complete Jekyll setup included (layouts, config, <a href="/404.html">404</a>, <a href="/atom.xml">RSS feed</a>, posts, and <a href="/about">example page</a>)</li>
-  <li>Mobile friendly design and development</li>
-  <li>Easily scalable text and component sizing with <code class="highlighter-rouge">rem</code> units in the CSS</li>
-  <li>Support for a wide gamut of HTML elements</li>
-  <li>Related posts (time-based, because Jekyll) below each post</li>
-  <li>Syntax highlighting, courtesy Jekyll’s built-in support for Rouge</li>
-</ul>
+<p>Lastly, a helper class called Generator was created to generate the training data of size n, which consisted of randomly selected values of x and y (the inputs) together with the correct answer (whether the point (x, y) is above or below the line).</p>
 
-<p>Additional features are available in individual themes.</p>
+<p>The working code for the perceptron is given below:
+<script src="https://gist.github.com/huzeifa/d55e7fb91c50e9184060eb4ac8b34676.js"></script></p>
 
-<h3 id="browser-support">Browser support</h3>
-
-<p>Poole and its themes are by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
-
-<h3 id="download">Download</h3>
-
-<p>These themes are developed on and hosted with GitHub. Head to the <a href="https://github.com/huzeifa/huzeifa.github.io">GitHub repository</a> for downloads, bug reports, and features requests.</p>
-
-<p>Thanks!</p>
+<p>Attending the workshop was of great benefit to me as it gave me a jump start to learn more about artificial intelligence and also it helped me to strengthen my understanding of the advance concepts of the Python programming language.</p>
 
   </article>
   
@@ -152,7 +159,7 @@
             </div>
             <div class="col-3">
               <p style="padding: 1rem 0">
-                &copy; <time datetime="2018-08-14T17:35:54+03:00">2018</time>
+                &copy; <time datetime="2018-08-14T17:56:38+03:00">2018</time>
               </p>
             </div>
           </div>

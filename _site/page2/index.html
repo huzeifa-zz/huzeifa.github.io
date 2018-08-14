@@ -68,198 +68,205 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/2016/01/02/example-content/">
-        Example content
+      <a href="/circuits/2017/08/27/constant-current-source/">
+        Simulating a Constant-Current Source Circuit using Qucs
       </a>
     </h1>
 
-    <time datetime="2016-01-02T00:00:00+03:00" class="post-date">02 Jan 2016</time>
+    <time datetime="2017-08-27T00:00:00+03:00" class="post-date">27 Aug 2017</time>
 
-    <div class="message">
-  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
-</div>
+    <p>Circuit simulation is a very important skill to acquire since it aids in verifying circuit designs and helps you to master ciruit analysis.</p>
 
-<p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+<p>In this post, I will show you how to use Qucs to perform a circuit simulation of a simple current source circuit employing a bipolar junction transistor (BJT) and diodes.
+This guide, however, doesn’t attempt to explain how the circuit works, but rather it is aimed at demonstrating how to simulate it using Qucs. The objective of the simulation is to measure the current supplied by the current source and to verify that the current supplied is constant over a given voltage range.</p>
 
-<blockquote>
-  <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-</blockquote>
+<h2 id="what-is-qucs">What is Qucs?</h2>
+<p>Qucs is an opensource circuit simulation software with a graphical user interface. It can be used to perform several types of simulations such as DC, AC, S-parameter, Harmonic Balance analysis, noise analysis and transient analysis. Qucs provides all the standard lumped components together with many semiconductor based devices and models such as opamps, diodes, MOSFETs, PMOSFETs and many more. In addition, digital simulation can also be performed in Qucs.</p>
 
-<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+<h2 id="installing-qucs">Installing Qucs</h2>
+<p>Qucs is fairly easy to install and is available on all major Linux based operating systems such as Fedora, Ubuntu, Arch Linux, etc. Qucs is also available on Windows and Mac OS. Please visit the link below to learn more about obtaining Qucs for your preferred Linux based OS.</p>
 
-<h2 id="inline-html-elements">Inline HTML elements</h2>
+<p><a href="http://qucs.sourceforge.net/download.html">Download Qucs</a></p>
 
-<p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
+<p>Ubuntu users should do a simple <code class="highlighter-rouge">sudo apt-get install qucs</code>, and Fedora users should punch in <code class="highlighter-rouge">sudo dnf install qucs</code>.</p>
 
-<ul>
-  <li><strong>To bold text</strong>, use <code class="highlighter-rouge">&lt;strong&gt;</code>.</li>
-  <li><em>To italicize text</em>, use <code class="highlighter-rouge">&lt;em&gt;</code>.</li>
-  <li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code class="highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="highlighter-rouge">title</code> attribute for the full phrase.</li>
-  <li>Citations, like <cite>— Mark otto</cite>, should use <code class="highlighter-rouge">&lt;cite&gt;</code>.</li>
-  <li><del>Deleted</del> text should use <code class="highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="highlighter-rouge">&lt;ins&gt;</code>.</li>
-  <li>Superscript <sup>text</sup> uses <code class="highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="highlighter-rouge">&lt;sub&gt;</code>.</li>
-</ul>
+<p>Once Qucs has been successfully installed on your machine, launch it using the OS program menu or simply type qucs in the terminal and hit Enter.</p>
 
-<p>Most of these elements are styled by browsers with few modifications on our part.</p>
+<h2 id="exploring-the-qucs-environment">Exploring the Qucs Environment</h2>
+<p>Qucs is easy to use once you have a firm grasp of its interface. I suggest you take a few minutes to explore the interface in order to familiarize yourself with the program. You can obtain a description of an icon or menu by simply hovering the mouse pointer over it.</p>
 
-<h2 id="footnotes">Footnotes</h2>
+<p><img src="/images/constant-current source/2017-08-28-081520_1366x768_scrot.jpg" alt="Screenshot of Qucs main window" /></p>
 
-<p>Footnotes are supported as part of the Markdown syntax. Here’s one in action. Clicking this number<sup id="fnref:fn-sample_footnote"><a href="#fn:fn-sample_footnote" class="footnote">1</a></sup> will lead you to a footnote. The syntax looks like:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">Clicking this number[^fn-sample_footnote]</code></pre></figure>
-
-<p>Each footnote needs the <code class="highlighter-rouge">^fn-</code> prefix and a unique ID to be referenced for the footnoted content. The syntax for that list looks something like this:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">[^fn-sample_footnote]: Handy! Now click the return link to go back.</code></pre></figure>
-
-<p>You can place the footnoted content wherever you like. Markdown parsers should properly place it at the bottom of the post.</p>
-
-<h2 id="heading">Heading</h2>
-
-<p>Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-
-<h3 id="code">Code</h3>
-
-<p>Inline code is available with the <code class="highlighter-rouge">&lt;code&gt;</code> element. Snippets of multiple lines of code are supported through Pygments. Longer lines will automatically scroll horizontally when needed.</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Example can be run directly in your JavaScript console
-</span>
-
-<span class="c1">// Create a function that takes two arguments and returns the sum of those arguments
-</span>
-<span class="kd">var</span> <span class="nx">adder</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"return a + b"</span><span class="p">);</span>
-
-<span class="c1">// Call the function
-</span>
-<span class="nx">adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
-<span class="c1">// &gt; 8</span></code></pre></figure>
-
-<p>You may also optionally show code snippets with line numbers. Add <code class="highlighter-rouge">linenos</code> to the Pygments tags.</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="code"><pre><span class="c1">// Example can be run directly in your JavaScript console
-</span>
-
-<span class="c1">// Create a function that takes two arguments and returns the sum of those arguments
-</span>
-<span class="kd">var</span> <span class="nx">adder</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"return a + b"</span><span class="p">);</span>
-
-<span class="c1">// Call the function
-</span>
-<span class="nx">adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
-<span class="c1">// &gt; 8</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-
-<h3 id="gists-via-github-pages">Gists via GitHub Pages</h3>
-
-<p>Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui.</p>
-
-<noscript><pre>400: Invalid request
-</pre></noscript>
-<script src="https://gist.github.com/13f94b734a4ddb132735.js?file=gist.md"> </script>
-
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper.</p>
-
-<h3 id="lists">Lists</h3>
-
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-
-<ul>
-  <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-  <li>Donec id elit non mi porta gravida at eget metus.</li>
-  <li>Nulla vitae elit libero, a pharetra augue.</li>
-</ul>
-
-<p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+<p>For this tutorial, I have briefly outlined the key things you need to know about the interface.</p>
 
 <ol>
-  <li>Vestibulum id ligula porta felis euismod semper.</li>
-  <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-  <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+  <li>
+    <p>The dotted off-white area on the right is the work area. This is where the circuits to be simulated are constructed and diagrams such as graphs and tables are placed.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">Dock Window</code> on the left, consisting of vertical tabs helps you to easily access your projects, see the contents of your simulation and select components for placing in the work area.</p>
+  </li>
+  <li>
+    <p>The toolbar on top is useful, as it readily provides you with the function of wiring, manipulating components and executing simulations.</p>
+  </li>
+  <li>
+    <p>To add a component in the work area, click on the <code class="highlighter-rouge">Components</code> tab availabe in the dock window. Choose the category of the component you require from the dropdown box. Resistors, capacitors and inductors are located under lumped components, semiconductor devices are available under non-linear devices etc. Select the desired component from the list and drag the pointer to the work area. At this point you will notice that the component symbol is accompanied with your mouse pointer. The orientation of the component can be altered by right clicking. Finally, left click to place the component in the work area. You will observe that the component symbol is still attached to the pointer implying that you can place another one. Press <code class="highlighter-rouge">ESC</code> or click the pointer icon in the toolbar to deactivate the placing of the component.</p>
+  </li>
+  <li>
+    <p>To change the properties of the component, select it, right click and choose <code class="highlighter-rouge">Edit Properties</code> from the menu. A dialog box pops up, from which you can edit the name and parameters of the component. You can also decide which parameters of the component to display in the schematic. This is achieved by selecting the parameter from the properties section and checking or un-checking the <code class="highlighter-rouge">display in schematic</code> option.</p>
+  </li>
+  <li>
+    <p>A Wire is used to connect one component to the other. It can be added from the <code class="highlighter-rouge">Insert</code> menu or the toolbar. A useful tip when wiring: to make a corner, simply right click.</p>
+  </li>
+  <li>
+    <p>It is important to make sure that your circuit is grounded properly or otherwise the simulation will not work as intended. The <code class="highlighter-rouge">Ground</code> port is availabe in the toolbar or from the <code class="highlighter-rouge">Insert</code> menu.</p>
+  </li>
+  <li>
+    <p>To perform the simulation, it is imperative to have a simulation block placed in your schematic. It is available in the <code class="highlighter-rouge">Components</code> tab under the <code class="highlighter-rouge">simulations</code> category.
+For this tutorial we will be using the <code class="highlighter-rouge">dc simulation</code> block.</p>
+  </li>
+  <li>
+    <p>It is also a good idea to know the keyboard shortcuts for performing various tasks as they save time. The shortcut to each task is available from the menubar; it is indicated beside the menu item for that particular task.</p>
+  </li>
 </ol>
 
-<p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+<p>That’s it folks, and you are ready to make your first simulation.</p>
 
-<dl>
-  <dt>HyperText Markup Language (HTML)</dt>
-  <dd>The language used to describe and define the content of a Web page</dd>
+<h2 id="constructing-the-circuit">Constructing the Circuit</h2>
+<p>The end result of the constructed circuit is shown below.</p>
 
-  <dt>Cascading Style Sheets (CSS)</dt>
-  <dd>Used to describe the appearance of Web content</dd>
+<p><img src="/images/constant-current source/final-circuit.png" alt="Final circuit" /></p>
 
-  <dt>JavaScript (JS)</dt>
-  <dd>The programming language used to build advanced Web sites and applications</dd>
-</dl>
+<p>The assembly of the circuit is an exercise left to perform on your own using the descriptions given above. I have included some notes incase if you get stuck.</p>
 
-<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<ul>
+  <li>
+    <p>As indicated previusly, the resistor is found under the <code class="highlighter-rouge">lumped components</code> category. To change its value, refer to point no. 5 of the above section. Alternatively, you can change it directly from the work area by double-clicking on the predefined value and replacing it with your desired value. It is okay to omit the units.</p>
+  </li>
+  <li>
+    <p>The npn transistor and the diode are located under <code class="highlighter-rouge">non-linear components</code>.</p>
+  </li>
+  <li>
+    <p>The voltage source is obtained from the <code class="highlighter-rouge">sources</code> category.</p>
+  </li>
+  <li>
+    <p>The ammeter measures the current flowing between the positive terminal of the voltage source and the collector of the transistor. This is where the load is supposed to be placed. It is found under <code class="highlighter-rouge">probes</code> as <code class="highlighter-rouge">Current Probe</code>. Ensure that the ammeter is positioned correctly, that is, the arrow should be pointing away from the voltage source. This can be achieved by simply right-clicking prior to placing it, or by using the rotate tool from the toolbar.</p>
+  </li>
+  <li>
+    <p>Lastly, don’t forget to place the <code class="highlighter-rouge">dc simulation</code> block. And of-course <strong>save</strong> your work</p>
+  </li>
+</ul>
 
-<h3 id="images">Images</h3>
+<p>Once you have completed the circuit construction, press <code class="highlighter-rouge">F2</code> to execute the simulation.</p>
 
-<p>Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.</p>
+<h2 id="performing-the-simulation">Performing the Simulation</h2>
+<p>Nothing happens at this point except a new data display page opens up. This is because we haven’t yet configured the simulation to provide us with data.</p>
 
-<p><img src="http://placehold.it/800x400" alt="placeholder" title="Large example image" />
-<img src="http://placehold.it/400x200" alt="placeholder" title="Medium example image" />
-<img src="http://placehold.it/200x200" alt="placeholder" title="Small example image" /></p>
+<p>One of the main aim of the simulation is to measure the current flowing between the collector of the transistor and the positive terminal of the voltage source. That is why we have placed a current probe between them.</p>
 
-<h3 id="tables">Tables</h3>
+<p>For us to obtain the value of this current we need to add a <code class="highlighter-rouge">diagram</code> in the new data display page (You can also place it in the schematics page). There are several types of diagrams available such as Cartesian, Polar, Tabular, Smith Chart, etc.  Since we only need one discrete reading, the diagram of choice will be <code class="highlighter-rouge">Tabular</code>. In the <code class="highlighter-rouge">Components</code> tab, from the dropdown box, select <code class="highlighter-rouge">diagrams</code> and from the list choose <code class="highlighter-rouge">Tabular</code>. Drag the pointer to the page, and left click. Automatically a dialog box will popup prompting you to select the reading you would like to display. Illustrated below is the <code class="highlighter-rouge">Edit Diagram Properties</code> dialog box.</p>
 
-<p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p><img src="/images/constant-current source/2017-08-31-113153_627x537_scrot.png" alt="Edit Diagram Properties Box" /></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Upvotes</th>
-      <th>Downvotes</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Totals</td>
-      <td>21</td>
-      <td>23</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Alice</td>
-      <td>10</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Charlie</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
+<p>Our main area of concern is the Dataset section. It consists of a dropdown box, for selecting the dataset from which you want to display the values and, a table listing the available readings to display. In our case, we will be having <code class="highlighter-rouge">V1.I</code> and <code class="highlighter-rouge">Pr1.I</code>. Notice the naming pattern. The characters before the dot represent the name of the component from which we want to extract data;  in our case the <code class="highlighter-rouge">V1</code> for voltage source and <code class="highlighter-rouge">Pr1</code> for current probe. The letter after the dot determines whether it is a voltage reading (V) or a current reading (I). Since we require the reading from the currrent probe, double-click on the <code class="highlighter-rouge">Pr1.I</code> entry. Consequently, the Graph section will be populated with <code class="highlighter-rouge">Pr1.I</code> entry. Click on <code class="highlighter-rouge">Apply</code> followed by <code class="highlighter-rouge">OK</code>. There you go! A table with the reading from the current probe will be displayed under the column heading <code class="highlighter-rouge">Pr1.I</code>. The current is measured in Amps. A screenshot of the table is shown below.</p>
 
-<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<p><img src="/images/constant-current source/2017-08-31-113802_369x257_scrot.png" alt="Screenshot of table with current reading" /></p>
 
-<hr />
+<p>This circuit was designed to drive an LED, therefore a current of 22.2mA is registered. You can experiment with the circuit by changing the value of the <code class="highlighter-rouge">R2</code> resistor and re-simulating to observe the new value of the current reading.</p>
 
-<p>Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a></p>
+<p>Another cool thing you can do is calculating the <code class="highlighter-rouge">DC bias</code>. This will display the potential at each node in the circuit and the current reading on the probes. This is achieved by either pressing <code class="highlighter-rouge">F8</code> or selecting the <code class="highlighter-rouge">Simulation</code> menu from the menu bar and choosing <code class="highlighter-rouge">Calculate DC bias</code>.
+The outcome is illustrated below.</p>
 
-<div class="footnotes">
-  <ol>
-    <li id="fn:fn-sample_footnote">
-      <p>Handy! Now click the return link to go back. <a href="#fnref:fn-sample_footnote" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<p><img src="/images/constant-current source/2017-08-31-121407_345x430_scrot.png" alt="Calculate DC bias" /></p>
+
+<p>Congratulations! You can now obtain meaningful data from the simulation exercise.</p>
+
+<h2 id="going-a-step-further">Going a Step Further</h2>
+<p>We also need to verify whether the current flowing is constant regardless of the voltage source value, that is, there shouldn’t be a significant variation in current when we alter the voltage source value from, let’s say, 5V to 15V. To accomplish this, we need to employ the <code class="highlighter-rouge">Parameter sweep</code> simulation. We will measure the current flowing for the following voltage range: 5 - 15V. Kindly follow the steps below to perfom the parameter sweep simulation.</p>
+
+<ol>
+  <li>
+    <p>Insert the <code class="highlighter-rouge">Parameter sweep</code> simulation block in the schematics page.</p>
+  </li>
+  <li>
+    <p>Double-click on the block to activate the properties dialog box.</p>
+  </li>
+  <li>
+    <p>Edit the properties as follows:</p>
+
+    <ul>
+      <li><strong>Simulation</strong>: DC1</li>
+      <li><strong>Sweep Parameter</strong>: Vs</li>
+      <li><strong>Type</strong>: linear</li>
+      <li><strong>Start</strong>: 5V</li>
+      <li><strong>Stop</strong>: 15V</li>
+      <li><strong>Step</strong>: 1</li>
+    </ul>
+
+    <p>Click on <code class="highlighter-rouge">Apply</code>, then select <code class="highlighter-rouge">OK</code>. The above configuration is illustrated below:</p>
+
+    <p><img src="/images/constant-current source/2017-09-04-212716_442x379_scrot.png" alt="Parameter sweep configuration" /></p>
+  </li>
+  <li>
+    <p>Double-click on the voltage source and replace the existing value of the voltage source to Vs. This makes a reference to the Sweep Parameter defined earlier. Click on Apply and OK. This is shown in the image below:</p>
+
+    <p><img src="/images/constant-current source/2017-09-04-212851_410x348_scrot.png" alt="Edit voltage source value to Vs" /></p>
+  </li>
+  <li>
+    <p>We will represent the data graphically on a Cartesian diagram and we will be expecting a horizontal line, implying that current is constant over the voltage range specified. To construct the graph, follow the steps outlined below:</p>
+
+    <ul>
+      <li>In the data display page, insert the <code class="highlighter-rouge">Cartesian</code> diagram and embrace yourself for the properties box.</li>
+      <li>In the <code class="highlighter-rouge">Data</code> tab, from the <code class="highlighter-rouge">Dataset</code> area, double-click on the <code class="highlighter-rouge">Pr1.I</code> entry. This activates the <code class="highlighter-rouge">Graph Input</code> section that gives you the option to choose the line color, style, thickness and position of y-axis (left or right). Make the selections as you wish and proceed to the <code class="highlighter-rouge">Properties</code> tab.</li>
+      <li>In the <code class="highlighter-rouge">Properties</code> tab, give appropriate labels to the x-axis and the left/right axis (this depends on the selection you made in the <code class="highlighter-rouge">Data</code> tab). At the bottom, you can also choose to show or not to show the grid, choose grid color, style and type (logarithmic). Switch to the <code class="highlighter-rouge">Limits</code> tab for the final configuration.</li>
+      <li>Our area of concern will be the <code class="highlighter-rouge">left Axis</code> (or right). In that section, check the <code class="highlighter-rouge">manual</code> checkbox and edit the start, step and stop values as follows:
+        <ul>
+          <li><strong>start</strong>: 0.01</li>
+          <li><strong>step</strong>: 0.01</li>
+          <li><strong>stop</strong>: 0.04</li>
+        </ul>
+      </li>
+      <li>Click on <code class="highlighter-rouge">Apply</code> and <code class="highlighter-rouge">OK</code>.</li>
+    </ul>
+
+    <p>The above series of steps are illustrated below:</p>
+
+    <p><em>Data tab</em></p>
+
+    <p><img src="/images/constant-current source/2017-09-04-212925_687x537_scrot.png" alt="Cartesian diagram properties, Data tab" /></p>
+
+    <p><em>Properties tab</em></p>
+
+    <p><img src="/images/constant-current source/2017-09-04-213024_687x537_scrot.png" alt="Cartesian diagram properties, Properties tab" /></p>
+
+    <p><em>Limits Tab</em></p>
+
+    <p><img src="/images/constant-current source/2017-09-04-213052_687x537_scrot.png" alt="Cartesian diagram properties, Limits tab" /></p>
+  </li>
+</ol>
+
+<p>The graph and the final schematic (notice the addition of a LED as load) are shown below:</p>
+
+<p><em>The graph</em></p>
+
+<p><img src="/images/constant-current source/2017-09-04-213125_741x510_scrot.png" alt="Current against voltage graph" /></p>
+
+<p><em>The final schematic</em></p>
+
+<p><img src="/images/constant-current source/2017-09-04-213207_505x361_scrot.png" alt="The final schematic" /></p>
+
+<p>The graph illustrates the change in current over the specified voltage range. It is fairly horizontal, and there is a minute change of 2mA between 5 and 15 volts. Although, for some applications, this change may be significant and thus a circuit with an improved accuracy is needed.</p>
+
+<p>Bravo! You have successfully performed a parameter sweep simulation and displayed the results graphically on a cartesian diagram.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>This post was aimed at giving you a brief overview of the Qucs interface, showing you how to conduct circuit simulations in order to obtain measurements and, use them to verify the outcome of the circuit.</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li><a href="http://qucs.sourceforge.net/index.html">Qucs project</a></li>
+  <li><a href="http://www.instructables.com/id/Simple-Led-driverConstant-current-source-20-mA/">Simple Led Driver/Constant-current Source 20 MA</a></li>
+</ul>
 
   </article>
   
@@ -297,7 +304,7 @@
             </div>
             <div class="col-3">
               <p style="padding: 1rem 0">
-                &copy; <time datetime="2018-08-14T17:35:54+03:00">2018</time>
+                &copy; <time datetime="2018-08-14T17:56:38+03:00">2018</time>
               </p>
             </div>
           </div>
