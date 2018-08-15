@@ -13,7 +13,7 @@ title: I am a problem solver.
     </div>
 </div>
 -----
-My primary interests include embedded systems, IoT, circuit design and AI. I intend to master these and build useful and amazing things that solve problems in the society.
+My primary interests include embedded systems, IoT, circuit design and AI. I intend to master these interests and build useful and amazing things that solve problems in the society.
 
 I have setup this space to share my experience and findings in this thrilling field of electronics.
 
