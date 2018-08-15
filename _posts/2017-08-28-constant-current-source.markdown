@@ -25,7 +25,7 @@ Once Qucs has been successfully installed on your machine, launch it using the O
 ## Exploring the Qucs Environment
 Qucs is easy to use once you have a firm grasp of its interface. I suggest you take a few minutes to explore the interface in order to familiarize yourself with the program. You can obtain a description of an icon or menu by simply hovering the mouse pointer over it.
 
-![Screenshot of Qucs main window](/images/constant-current source/2017-08-28-081520_1366x768_scrot.jpg) 
+![Screenshot of Qucs main window](/public/images/constant-current source/2017-08-28-081520_1366x768_scrot.jpg) 
 
 For this tutorial, I have briefly outlined the key things you need to know about the interface.
 
@@ -53,7 +53,7 @@ That's it folks, and you are ready to make your first simulation.
 ## Constructing the Circuit
 The end result of the constructed circuit is shown below.
 
-![Final circuit](/images/constant-current source/final-circuit.png)
+![Final circuit](/public/images/constant-current source/final-circuit.png)
 
 The assembly of the circuit is an exercise left to perform on your own using the descriptions given above. I have included some notes incase if you get stuck.
 
@@ -76,18 +76,18 @@ One of the main aim of the simulation is to measure the current flowing between 
 
 For us to obtain the value of this current we need to add a `diagram` in the new data display page (You can also place it in the schematics page). There are several types of diagrams available such as Cartesian, Polar, Tabular, Smith Chart, etc.  Since we only need one discrete reading, the diagram of choice will be `Tabular`. In the `Components` tab, from the dropdown box, select `diagrams` and from the list choose `Tabular`. Drag the pointer to the page, and left click. Automatically a dialog box will popup prompting you to select the reading you would like to display. Illustrated below is the `Edit Diagram Properties` dialog box.
 
-![Edit Diagram Properties Box](/images/constant-current source/2017-08-31-113153_627x537_scrot.png) 
+![Edit Diagram Properties Box](/public/images/constant-current source/2017-08-31-113153_627x537_scrot.png) 
 
 Our main area of concern is the Dataset section. It consists of a dropdown box, for selecting the dataset from which you want to display the values and, a table listing the available readings to display. In our case, we will be having `V1.I` and `Pr1.I`. Notice the naming pattern. The characters before the dot represent the name of the component from which we want to extract data;  in our case the `V1` for voltage source and `Pr1` for current probe. The letter after the dot determines whether it is a voltage reading (V) or a current reading (I). Since we require the reading from the currrent probe, double-click on the `Pr1.I` entry. Consequently, the Graph section will be populated with `Pr1.I` entry. Click on `Apply` followed by `OK`. There you go! A table with the reading from the current probe will be displayed under the column heading `Pr1.I`. The current is measured in Amps. A screenshot of the table is shown below.
 
-![Screenshot of table with current reading](/images/constant-current source/2017-08-31-113802_369x257_scrot.png) 
+![Screenshot of table with current reading](/public/images/constant-current source/2017-08-31-113802_369x257_scrot.png) 
 
 This circuit was designed to drive an LED, therefore a current of 22.2mA is registered. You can experiment with the circuit by changing the value of the `R2` resistor and re-simulating to observe the new value of the current reading.
 
 Another cool thing you can do is calculating the `DC bias`. This will display the potential at each node in the circuit and the current reading on the probes. This is achieved by either pressing `F8` or selecting the `Simulation` menu from the menu bar and choosing `Calculate DC bias`.
 The outcome is illustrated below.
 
-![Calculate DC bias](/images/constant-current source/2017-08-31-121407_345x430_scrot.png) 
+![Calculate DC bias](/public/images/constant-current source/2017-08-31-121407_345x430_scrot.png) 
 
 Congratulations! You can now obtain meaningful data from the simulation exercise.
 
@@ -109,11 +109,11 @@ We also need to verify whether the current flowing is constant regardless of the
 	
 	Click on `Apply`, then select `OK`. The above configuration is illustrated below:
 	
-	![Parameter sweep configuration](/images/constant-current source/2017-09-04-212716_442x379_scrot.png)
+	![Parameter sweep configuration](/public/public/images/constant-current source/2017-09-04-212716_442x379_scrot.png)
 
 4. Double-click on the voltage source and replace the existing value of the voltage source to Vs. This makes a reference to the Sweep Parameter defined earlier. Click on Apply and OK. This is shown in the image below:
 
-	![Edit voltage source value to Vs](/images/constant-current source/2017-09-04-212851_410x348_scrot.png)
+	![Edit voltage source value to Vs](/public/images/constant-current source/2017-09-04-212851_410x348_scrot.png)
  
 5. We will represent the data graphically on a Cartesian diagram and we will be expecting a horizontal line, implying that current is constant over the voltage range specified. To construct the graph, follow the steps outlined below:
 
@@ -131,25 +131,25 @@ We also need to verify whether the current flowing is constant regardless of the
 	
 	*Data tab*
 	
-	![Cartesian diagram properties, Data tab](/images/constant-current source/2017-09-04-212925_687x537_scrot.png)
+	![Cartesian diagram properties, Data tab](/public/images/constant-current source/2017-09-04-212925_687x537_scrot.png)
 
 	*Properties tab*
 	
-	![Cartesian diagram properties, Properties tab](/images/constant-current source/2017-09-04-213024_687x537_scrot.png)
+	![Cartesian diagram properties, Properties tab](/public/images/constant-current source/2017-09-04-213024_687x537_scrot.png)
 
 	*Limits Tab*
 	
-	![Cartesian diagram properties, Limits tab](/images/constant-current source/2017-09-04-213052_687x537_scrot.png)
+	![Cartesian diagram properties, Limits tab](/public/images/constant-current source/2017-09-04-213052_687x537_scrot.png)
 
 The graph and the final schematic (notice the addition of a LED as load) are shown below:
 
 *The graph*
 
-![Current against voltage graph](/images/constant-current source/2017-09-04-213125_741x510_scrot.png)
+![Current against voltage graph](/public/images/constant-current source/2017-09-04-213125_741x510_scrot.png)
 
 *The final schematic*
 
-![The final schematic](/images/constant-current source/2017-09-04-213207_505x361_scrot.png)
+![The final schematic](/public/images/constant-current source/2017-09-04-213207_505x361_scrot.png)
 
 The graph illustrates the change in current over the specified voltage range. It is fairly horizontal, and there is a minute change of 2mA between 5 and 15 volts. Although, for some applications, this change may be significant and thus a circuit with an improved accuracy is needed.
 

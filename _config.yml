@@ -15,6 +15,17 @@ sass:
   sass_dir:          _sass
   style:            :compressed
 
+# Jekyll-archives config.
+jekyll-archives:
+  enabled: all
+  layout: 'archive'
+  permalinks:
+    year: 'archives/:year/'
+    month: 'archives/:year/:month/'
+    day: '/:year/:month/:day/'
+    tag: '/tag/:name/'
+    category: '/category/:name/'
+ 
 # About/contact
 author:
   name:              Huzeifa Naim
@@ -30,3 +41,4 @@ github:
 plugins:
   - jekyll-paginate
   - jekyll-gist
+  - jekyll-archives

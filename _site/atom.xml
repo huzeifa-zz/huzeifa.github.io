@@ -4,7 +4,7 @@
  <title>Huzeifa Naim</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-08-14T17:56:38+03:00</updated>
+ <updated>2018-08-15T10:07:11+03:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Huzeifa Naim</name>
@@ -92,7 +92,7 @@ This guide, however, doesn’t attempt to explain how the circuit works, but rat
 &lt;h2 id=&quot;exploring-the-qucs-environment&quot;&gt;Exploring the Qucs Environment&lt;/h2&gt;
 &lt;p&gt;Qucs is easy to use once you have a firm grasp of its interface. I suggest you take a few minutes to explore the interface in order to familiarize yourself with the program. You can obtain a description of an icon or menu by simply hovering the mouse pointer over it.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/constant-current source/2017-08-28-081520_1366x768_scrot.jpg&quot; alt=&quot;Screenshot of Qucs main window&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/images/constant-current source/2017-08-28-081520_1366x768_scrot.jpg&quot; alt=&quot;Screenshot of Qucs main window&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;For this tutorial, I have briefly outlined the key things you need to know about the interface.&lt;/p&gt;
 
@@ -132,7 +132,7 @@ For this tutorial we will be using the &lt;code class=&quot;highlighter-rouge&qu
 &lt;h2 id=&quot;constructing-the-circuit&quot;&gt;Constructing the Circuit&lt;/h2&gt;
 &lt;p&gt;The end result of the constructed circuit is shown below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/constant-current source/final-circuit.png&quot; alt=&quot;Final circuit&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/images/constant-current source/final-circuit.png&quot; alt=&quot;Final circuit&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The assembly of the circuit is an exercise left to perform on your own using the descriptions given above. I have included some notes incase if you get stuck.&lt;/p&gt;
 
@@ -163,18 +163,18 @@ For this tutorial we will be using the &lt;code class=&quot;highlighter-rouge&qu
 
 &lt;p&gt;For us to obtain the value of this current we need to add a &lt;code class=&quot;highlighter-rouge&quot;&gt;diagram&lt;/code&gt; in the new data display page (You can also place it in the schematics page). There are several types of diagrams available such as Cartesian, Polar, Tabular, Smith Chart, etc.  Since we only need one discrete reading, the diagram of choice will be &lt;code class=&quot;highlighter-rouge&quot;&gt;Tabular&lt;/code&gt;. In the &lt;code class=&quot;highlighter-rouge&quot;&gt;Components&lt;/code&gt; tab, from the dropdown box, select &lt;code class=&quot;highlighter-rouge&quot;&gt;diagrams&lt;/code&gt; and from the list choose &lt;code class=&quot;highlighter-rouge&quot;&gt;Tabular&lt;/code&gt;. Drag the pointer to the page, and left click. Automatically a dialog box will popup prompting you to select the reading you would like to display. Illustrated below is the &lt;code class=&quot;highlighter-rouge&quot;&gt;Edit Diagram Properties&lt;/code&gt; dialog box.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/constant-current source/2017-08-31-113153_627x537_scrot.png&quot; alt=&quot;Edit Diagram Properties Box&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/images/constant-current source/2017-08-31-113153_627x537_scrot.png&quot; alt=&quot;Edit Diagram Properties Box&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Our main area of concern is the Dataset section. It consists of a dropdown box, for selecting the dataset from which you want to display the values and, a table listing the available readings to display. In our case, we will be having &lt;code class=&quot;highlighter-rouge&quot;&gt;V1.I&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Pr1.I&lt;/code&gt;. Notice the naming pattern. The characters before the dot represent the name of the component from which we want to extract data;  in our case the &lt;code class=&quot;highlighter-rouge&quot;&gt;V1&lt;/code&gt; for voltage source and &lt;code class=&quot;highlighter-rouge&quot;&gt;Pr1&lt;/code&gt; for current probe. The letter after the dot determines whether it is a voltage reading (V) or a current reading (I). Since we require the reading from the currrent probe, double-click on the &lt;code class=&quot;highlighter-rouge&quot;&gt;Pr1.I&lt;/code&gt; entry. Consequently, the Graph section will be populated with &lt;code class=&quot;highlighter-rouge&quot;&gt;Pr1.I&lt;/code&gt; entry. Click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Apply&lt;/code&gt; followed by &lt;code class=&quot;highlighter-rouge&quot;&gt;OK&lt;/code&gt;. There you go! A table with the reading from the current probe will be displayed under the column heading &lt;code class=&quot;highlighter-rouge&quot;&gt;Pr1.I&lt;/code&gt;. The current is measured in Amps. A screenshot of the table is shown below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/constant-current source/2017-08-31-113802_369x257_scrot.png&quot; alt=&quot;Screenshot of table with current reading&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/images/constant-current source/2017-08-31-113802_369x257_scrot.png&quot; alt=&quot;Screenshot of table with current reading&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This circuit was designed to drive an LED, therefore a current of 22.2mA is registered. You can experiment with the circuit by changing the value of the &lt;code class=&quot;highlighter-rouge&quot;&gt;R2&lt;/code&gt; resistor and re-simulating to observe the new value of the current reading.&lt;/p&gt;
 
 &lt;p&gt;Another cool thing you can do is calculating the &lt;code class=&quot;highlighter-rouge&quot;&gt;DC bias&lt;/code&gt;. This will display the potential at each node in the circuit and the current reading on the probes. This is achieved by either pressing &lt;code class=&quot;highlighter-rouge&quot;&gt;F8&lt;/code&gt; or selecting the &lt;code class=&quot;highlighter-rouge&quot;&gt;Simulation&lt;/code&gt; menu from the menu bar and choosing &lt;code class=&quot;highlighter-rouge&quot;&gt;Calculate DC bias&lt;/code&gt;.
 The outcome is illustrated below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/constant-current source/2017-08-31-121407_345x430_scrot.png&quot; alt=&quot;Calculate DC bias&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/images/constant-current source/2017-08-31-121407_345x430_scrot.png&quot; alt=&quot;Calculate DC bias&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Congratulations! You can now obtain meaningful data from the simulation exercise.&lt;/p&gt;
 
@@ -202,12 +202,12 @@ The outcome is illustrated below.&lt;/p&gt;
 
     &lt;p&gt;Click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Apply&lt;/code&gt;, then select &lt;code class=&quot;highlighter-rouge&quot;&gt;OK&lt;/code&gt;. The above configuration is illustrated below:&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/images/constant-current source/2017-09-04-212716_442x379_scrot.png&quot; alt=&quot;Parameter sweep configuration&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;/public/public/images/constant-current source/2017-09-04-212716_442x379_scrot.png&quot; alt=&quot;Parameter sweep configuration&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Double-click on the voltage source and replace the existing value of the voltage source to Vs. This makes a reference to the Sweep Parameter defined earlier. Click on Apply and OK. This is shown in the image below:&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/images/constant-current source/2017-09-04-212851_410x348_scrot.png&quot; alt=&quot;Edit voltage source value to Vs&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;/public/images/constant-current source/2017-09-04-212851_410x348_scrot.png&quot; alt=&quot;Edit voltage source value to Vs&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;We will represent the data graphically on a Cartesian diagram and we will be expecting a horizontal line, implying that current is constant over the voltage range specified. To construct the graph, follow the steps outlined below:&lt;/p&gt;
@@ -230,15 +230,15 @@ The outcome is illustrated below.&lt;/p&gt;
 
     &lt;p&gt;&lt;em&gt;Data tab&lt;/em&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/images/constant-current source/2017-09-04-212925_687x537_scrot.png&quot; alt=&quot;Cartesian diagram properties, Data tab&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;/public/images/constant-current source/2017-09-04-212925_687x537_scrot.png&quot; alt=&quot;Cartesian diagram properties, Data tab&quot; /&gt;&lt;/p&gt;
 
     &lt;p&gt;&lt;em&gt;Properties tab&lt;/em&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/images/constant-current source/2017-09-04-213024_687x537_scrot.png&quot; alt=&quot;Cartesian diagram properties, Properties tab&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;/public/images/constant-current source/2017-09-04-213024_687x537_scrot.png&quot; alt=&quot;Cartesian diagram properties, Properties tab&quot; /&gt;&lt;/p&gt;
 
     &lt;p&gt;&lt;em&gt;Limits Tab&lt;/em&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/images/constant-current source/2017-09-04-213052_687x537_scrot.png&quot; alt=&quot;Cartesian diagram properties, Limits tab&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;/public/images/constant-current source/2017-09-04-213052_687x537_scrot.png&quot; alt=&quot;Cartesian diagram properties, Limits tab&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -246,11 +246,11 @@ The outcome is illustrated below.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;The graph&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/constant-current source/2017-09-04-213125_741x510_scrot.png&quot; alt=&quot;Current against voltage graph&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/images/constant-current source/2017-09-04-213125_741x510_scrot.png&quot; alt=&quot;Current against voltage graph&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;The final schematic&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/constant-current source/2017-09-04-213207_505x361_scrot.png&quot; alt=&quot;The final schematic&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/images/constant-current source/2017-09-04-213207_505x361_scrot.png&quot; alt=&quot;The final schematic&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The graph illustrates the change in current over the specified voltage range. It is fairly horizontal, and there is a minute change of 2mA between 5 and 15 volts. Although, for some applications, this change may be significant and thus a circuit with an improved accuracy is needed.&lt;/p&gt;
 

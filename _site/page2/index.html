@@ -40,7 +40,7 @@
           </div>
           <div class="col-4">
             <nav>
-            <ul class="nav">
+            <ul class="nav nav-header">
               <li><a href="/about" title="About Me">About Me</a></li>
               <li><a href="/archives" title="Archives">Archives</a></li>
             </ul>
@@ -54,7 +54,7 @@
           <div id="overlay"></div>
           <div class="container">
             <h1 class="title">Hi! I am Huzeifa.</h1>
-            <p class="sub"><mark>I love to design and build <b>hardware</b> that matters.</mark></p>
+            <p class="sub">I love to design and build <b>hardware</b> that matters.</p>
           </div>
       </section>
       
@@ -95,7 +95,7 @@ This guide, however, doesn’t attempt to explain how the circuit works, but rat
 <h2 id="exploring-the-qucs-environment">Exploring the Qucs Environment</h2>
 <p>Qucs is easy to use once you have a firm grasp of its interface. I suggest you take a few minutes to explore the interface in order to familiarize yourself with the program. You can obtain a description of an icon or menu by simply hovering the mouse pointer over it.</p>
 
-<p><img src="/images/constant-current source/2017-08-28-081520_1366x768_scrot.jpg" alt="Screenshot of Qucs main window" /></p>
+<p><img src="/public/images/constant-current source/2017-08-28-081520_1366x768_scrot.jpg" alt="Screenshot of Qucs main window" /></p>
 
 <p>For this tutorial, I have briefly outlined the key things you need to know about the interface.</p>
 
@@ -135,7 +135,7 @@ For this tutorial we will be using the <code class="highlighter-rouge">dc simula
 <h2 id="constructing-the-circuit">Constructing the Circuit</h2>
 <p>The end result of the constructed circuit is shown below.</p>
 
-<p><img src="/images/constant-current source/final-circuit.png" alt="Final circuit" /></p>
+<p><img src="/public/images/constant-current source/final-circuit.png" alt="Final circuit" /></p>
 
 <p>The assembly of the circuit is an exercise left to perform on your own using the descriptions given above. I have included some notes incase if you get stuck.</p>
 
@@ -166,18 +166,18 @@ For this tutorial we will be using the <code class="highlighter-rouge">dc simula
 
 <p>For us to obtain the value of this current we need to add a <code class="highlighter-rouge">diagram</code> in the new data display page (You can also place it in the schematics page). There are several types of diagrams available such as Cartesian, Polar, Tabular, Smith Chart, etc.  Since we only need one discrete reading, the diagram of choice will be <code class="highlighter-rouge">Tabular</code>. In the <code class="highlighter-rouge">Components</code> tab, from the dropdown box, select <code class="highlighter-rouge">diagrams</code> and from the list choose <code class="highlighter-rouge">Tabular</code>. Drag the pointer to the page, and left click. Automatically a dialog box will popup prompting you to select the reading you would like to display. Illustrated below is the <code class="highlighter-rouge">Edit Diagram Properties</code> dialog box.</p>
 
-<p><img src="/images/constant-current source/2017-08-31-113153_627x537_scrot.png" alt="Edit Diagram Properties Box" /></p>
+<p><img src="/public/images/constant-current source/2017-08-31-113153_627x537_scrot.png" alt="Edit Diagram Properties Box" /></p>
 
 <p>Our main area of concern is the Dataset section. It consists of a dropdown box, for selecting the dataset from which you want to display the values and, a table listing the available readings to display. In our case, we will be having <code class="highlighter-rouge">V1.I</code> and <code class="highlighter-rouge">Pr1.I</code>. Notice the naming pattern. The characters before the dot represent the name of the component from which we want to extract data;  in our case the <code class="highlighter-rouge">V1</code> for voltage source and <code class="highlighter-rouge">Pr1</code> for current probe. The letter after the dot determines whether it is a voltage reading (V) or a current reading (I). Since we require the reading from the currrent probe, double-click on the <code class="highlighter-rouge">Pr1.I</code> entry. Consequently, the Graph section will be populated with <code class="highlighter-rouge">Pr1.I</code> entry. Click on <code class="highlighter-rouge">Apply</code> followed by <code class="highlighter-rouge">OK</code>. There you go! A table with the reading from the current probe will be displayed under the column heading <code class="highlighter-rouge">Pr1.I</code>. The current is measured in Amps. A screenshot of the table is shown below.</p>
 
-<p><img src="/images/constant-current source/2017-08-31-113802_369x257_scrot.png" alt="Screenshot of table with current reading" /></p>
+<p><img src="/public/images/constant-current source/2017-08-31-113802_369x257_scrot.png" alt="Screenshot of table with current reading" /></p>
 
 <p>This circuit was designed to drive an LED, therefore a current of 22.2mA is registered. You can experiment with the circuit by changing the value of the <code class="highlighter-rouge">R2</code> resistor and re-simulating to observe the new value of the current reading.</p>
 
 <p>Another cool thing you can do is calculating the <code class="highlighter-rouge">DC bias</code>. This will display the potential at each node in the circuit and the current reading on the probes. This is achieved by either pressing <code class="highlighter-rouge">F8</code> or selecting the <code class="highlighter-rouge">Simulation</code> menu from the menu bar and choosing <code class="highlighter-rouge">Calculate DC bias</code>.
 The outcome is illustrated below.</p>
 
-<p><img src="/images/constant-current source/2017-08-31-121407_345x430_scrot.png" alt="Calculate DC bias" /></p>
+<p><img src="/public/images/constant-current source/2017-08-31-121407_345x430_scrot.png" alt="Calculate DC bias" /></p>
 
 <p>Congratulations! You can now obtain meaningful data from the simulation exercise.</p>
 
@@ -205,12 +205,12 @@ The outcome is illustrated below.</p>
 
     <p>Click on <code class="highlighter-rouge">Apply</code>, then select <code class="highlighter-rouge">OK</code>. The above configuration is illustrated below:</p>
 
-    <p><img src="/images/constant-current source/2017-09-04-212716_442x379_scrot.png" alt="Parameter sweep configuration" /></p>
+    <p><img src="/public/public/images/constant-current source/2017-09-04-212716_442x379_scrot.png" alt="Parameter sweep configuration" /></p>
   </li>
   <li>
     <p>Double-click on the voltage source and replace the existing value of the voltage source to Vs. This makes a reference to the Sweep Parameter defined earlier. Click on Apply and OK. This is shown in the image below:</p>
 
-    <p><img src="/images/constant-current source/2017-09-04-212851_410x348_scrot.png" alt="Edit voltage source value to Vs" /></p>
+    <p><img src="/public/images/constant-current source/2017-09-04-212851_410x348_scrot.png" alt="Edit voltage source value to Vs" /></p>
   </li>
   <li>
     <p>We will represent the data graphically on a Cartesian diagram and we will be expecting a horizontal line, implying that current is constant over the voltage range specified. To construct the graph, follow the steps outlined below:</p>
@@ -233,15 +233,15 @@ The outcome is illustrated below.</p>
 
     <p><em>Data tab</em></p>
 
-    <p><img src="/images/constant-current source/2017-09-04-212925_687x537_scrot.png" alt="Cartesian diagram properties, Data tab" /></p>
+    <p><img src="/public/images/constant-current source/2017-09-04-212925_687x537_scrot.png" alt="Cartesian diagram properties, Data tab" /></p>
 
     <p><em>Properties tab</em></p>
 
-    <p><img src="/images/constant-current source/2017-09-04-213024_687x537_scrot.png" alt="Cartesian diagram properties, Properties tab" /></p>
+    <p><img src="/public/images/constant-current source/2017-09-04-213024_687x537_scrot.png" alt="Cartesian diagram properties, Properties tab" /></p>
 
     <p><em>Limits Tab</em></p>
 
-    <p><img src="/images/constant-current source/2017-09-04-213052_687x537_scrot.png" alt="Cartesian diagram properties, Limits tab" /></p>
+    <p><img src="/public/images/constant-current source/2017-09-04-213052_687x537_scrot.png" alt="Cartesian diagram properties, Limits tab" /></p>
   </li>
 </ol>
 
@@ -249,11 +249,11 @@ The outcome is illustrated below.</p>
 
 <p><em>The graph</em></p>
 
-<p><img src="/images/constant-current source/2017-09-04-213125_741x510_scrot.png" alt="Current against voltage graph" /></p>
+<p><img src="/public/images/constant-current source/2017-09-04-213125_741x510_scrot.png" alt="Current against voltage graph" /></p>
 
 <p><em>The final schematic</em></p>
 
-<p><img src="/images/constant-current source/2017-09-04-213207_505x361_scrot.png" alt="The final schematic" /></p>
+<p><img src="/public/images/constant-current source/2017-09-04-213207_505x361_scrot.png" alt="The final schematic" /></p>
 
 <p>The graph illustrates the change in current over the specified voltage range. It is fairly horizontal, and there is a minute change of 2mA between 5 and 15 volts. Although, for some applications, this change may be significant and thus a circuit with an improved accuracy is needed.</p>
 
@@ -289,23 +289,18 @@ The outcome is illustrated below.</p>
       <footer class="footer">
         <div class="container">
           <div class="row">
-            <div class="col-6">
-              <ul class="nav">
+            <div class="col-8">
+              <ul class="nav nav-footer">
           	    <li><a href="/index.html">Home</a></li>
                 <li><a href="/blog">About Me</a></li>
                 <li><a href="/about">Archives</a></li>
               </ul>
             </div>
-            <div class="col-3">
-              <ul class="nav">
+            <div class="col-4">
+              <ul class="nav nav-footer">
                 <li><a href="http://twitter.com/huzi94"><i class="fab fa-twitter fa-lg"></i></a></li>
                 <li><a href="http://github.com/huzeifa"><i class="fab fa-github fa-lg"></i></a></li>
               </ul>
-            </div>
-            <div class="col-3">
-              <p style="padding: 1rem 0">
-                &copy; <time datetime="2018-08-14T17:56:38+03:00">2018</time>
-              </p>
             </div>
           </div>
         </div>

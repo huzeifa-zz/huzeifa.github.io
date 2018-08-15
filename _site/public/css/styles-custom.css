@@ -1,19 +1,26 @@
 .nav {
   list-style-type: none;
   padding: 0;
+}
+
+.nav-header {
+  margin: 0;
+}
+
+.nav-footer {
   margin: 0;
 }
 
 .nav li {
   display: inline-block;
+  padding-right: 1rem;
+  padding-top: 1.1rem;
 }
 
 .nav li a {
-    display: block;
-    color: #111;
-    text-align: left;
-    padding: 1rem 1rem 0 0;
+    color: inherit;
 }
+
 
 .jumbotron {
   background: url(/public/images/bg.jpg) no-repeat center center fixed;
@@ -41,9 +48,13 @@
   margin: 0;
   font-size: 1.25rem;
   font-weight: 400;
-  line-height: 2.6;
+  line-height: 1.2;
   text-align: center;
-  color: #fff;
+  color: #0074D9;
+  background-color: #fff;
+  opacity: 0.9;
+  padding: 0.75rem 0;
+
 }
 
 .jumbotron .sub mark {
@@ -71,7 +82,7 @@
 
 @media only screen and (max-width: 540px) {
    .jumbotron .title { font-size: 2.5em}
-   jumbotron .sub{ font-size: 1rem}
+   .jumbotron .sub{ font-size: 1rem}
 }
 /**
 *** SIMPLE GRID

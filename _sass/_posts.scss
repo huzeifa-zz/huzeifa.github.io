@@ -5,10 +5,8 @@
 
 .page,
 .post {
+  font-family: 'Open Sans', sans-serif;
   margin-bottom: 4em;
-  p {
-    font-family: 'Open Sans', sans-serif;
-  }
 
   li + li {
     margin-top: .25rem;
@@ -23,6 +21,7 @@
 }
 .page-title,
 .post-title {
+  font-family: 'Roboto', sans-serif;
   margin-top: 0;
 }
 
