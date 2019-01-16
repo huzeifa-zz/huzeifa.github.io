@@ -2,7 +2,7 @@
 layout: posts
 title: "Mekatilili Fellowship Program 2019"
 date: 2019-01-16
-
+---
 Recently from 12th to 16th Jan 2019, I had a great opportunity to be selected in the Mekatilili Fellowship Program.
 The program aims to nurture innovation via human centered design and develop the participants' professional image via workshops such as elevator pitches and portfolio building.
 The program began with a warm welcome reception by the organizing committee. The program agenda was conveyed and talks were given by company representatives on the three design themes: manufacturing, accessibility and agriculture. I was in the design for manufacturing theme.
