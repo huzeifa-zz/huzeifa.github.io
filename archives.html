@@ -4,6 +4,19 @@ title: Archives
 ---
 <div class="page">
 <h1 class="page-title">Archives</h1>
+<h2>2019</h2>
+<ul>
+{% for post in site.posts %}
+  {% assign year =  post.date | date: "%Y" %}
+  {% if year == "2019" %}
+  <li>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}: </time>
+    <!--<span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>-->
+    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+  </li>
+  {% endif %}
+{% endfor %}
+</ul>
 <h2>2018</h2>
 <ul>
 {% for post in site.posts %}
