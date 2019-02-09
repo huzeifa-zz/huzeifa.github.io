@@ -21,6 +21,9 @@
     color: inherit;
 }
 
+.archive-list {
+    list-style-type: none;
+}
 
 .jumbotron {
   background: url(/public/images/bg.jpg) no-repeat center center fixed;
